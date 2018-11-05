@@ -1,0 +1,124 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+a {
+    color: white;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: url(hand.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(1.2) contrast(.85) saturate(.05) sepia(.2);
+}
+
+.poster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+  width: auto;
+  max-width: 1000px;
+  margin: auto;
+  background: rgba(31, 99, 22, 0.8);
+  color: white;
+  padding: 30px;
+}
+
+.poster__topic,
+.poster__speaker {
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}
+.poster__topic {
+    font-size: 2em;
+}
+
+.poster__speaker {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+}
+
+.poster__speaker__icon {
+  width: 100%;
+  max-width: 75px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.poster__footer {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-content: space-between;
+}
+
+.poster__number {
+    font-size: 1.2em;
+}
+
+/*
+<Nummer>
+
+        <Thema>
+        <Speaker>
+
+<Footer>            <Footer>
+*/
+@supports (display: grid) {
+  .poster {
+    display: grid;
+    padding: 1vh 1vw;
+    grid-template-columns: 19vw minmax(50px, 60vw) 19vw;
+    grid-template-rows: minmax(auto, 3vh) minmax(10px, 25vh) minmax(100px, 25vh) repeat(
+        3,
+        minmax(auto, 15vh)
+      );
+    grid-template-areas:
+      "number number number"
+      "empty2 empty empty"
+      "topic topic topic"
+      "speaker speaker speaker"
+      "empty3 empty5 empty4"
+      "footer footer footer";
+  }
+
+  .poster__number {
+    grid-area: number;
+  }
+
+  .poster__topic {
+    grid-area: topic;
+  }
+
+  .poster__speaker {
+    grid-area: speaker;
+  }
+
+  .poster__speaker__name {
+    display: inline;
+  }
+
+  .poster__footer {
+    grid-area: footer;
+  }
+}

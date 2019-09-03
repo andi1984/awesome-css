@@ -1,0 +1,28 @@
+a {
+  font-size: 3rem;
+  text-underline-offset: 20px;
+}
+
+.no-skip-ink {
+  text-decoration-skip-ink: none;
+}
+
+.text-decoration-style--double {
+    text-decoration-style: double;
+}
+
+.text-decoration-style--wavy {
+    text-decoration-style: wavy;
+}
+
+.text-decoration-style--dashed {
+    text-decoration-style: dashed;
+}
+
+.text-decoration-color--red {
+    text-decoration-color: red;
+}
+
+.text-decoration-color--blue {
+    text-decoration-color: lightblue;
+}
